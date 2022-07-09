@@ -1,4 +1,4 @@
-#! /bin/zsh
+#! /bin/bash
 
 # ghq + peco でgitリポジトリをインクリメントサーチ
 function peco-src () {
@@ -23,7 +23,7 @@ bindkey '^R' peco-history-selection
 
 # Downloadsディレクトリの最新のファイルをカレントディレクトリに移動
 function mvdl () {
-    local file=`\ls -t $HOME/Downloads | head -1`
+    local file=$(\ls -t $HOME/Downloads | head -1)
     if [ $# -eq 1 ]; then
         mv $HOME/Downloads/$file `pwd`/$1
     else
