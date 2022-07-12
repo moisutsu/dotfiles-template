@@ -1,9 +1,7 @@
 #!/bin/bash -eu
 
 DOT_DIRECTORY="$HOME/dotfiles"
-DOTCONFIG_DIRECTORY="$HOME/.config"
 BACKUP_DIRECTORY="$HOME/.backup/dotfiles"
-DOTCONFIG_FILES=()
 
 cd "$(dirname "$0")"
 
@@ -21,9 +19,3 @@ do
 done
 
 rmdir -p "$BACKUP_DIRECTORY" 2>/dev/null
-
-mkdir -p "$DOTCONFIG_DIRECTORY"
-for f in "${DOTCONFIG_FILES[@]}"
-do
-    ln -snfv "$DOT_DIRECTORY/$f" "$DOTCONFIG_DIRECTORY/$f"
-done
